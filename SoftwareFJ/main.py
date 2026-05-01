@@ -137,8 +137,7 @@ class Reserva:
         except Exception as e:
             self.estado = "cancelada"
             return f"Error al procesar la reserva:{str(e)}"
-        
-        print("cambio para git")
+    
             
             
     
