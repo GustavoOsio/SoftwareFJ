@@ -61,6 +61,17 @@ class Reserva:
 
     def get_costo(self) -> float:
         return self.__servicio.calcular_costo()
+    
+        # ── Procesa la reserva calculando su costo total ───────── 
+        # ── Si ocurre un error, la reserva se cancela automaticamente ───────── 
+    def procesar(self) -> str:
+        try:
+            costo =self.get_costo()
+            return f"Reserva #{self.__id_reserva} procesada correctamente. costo: ${costo:.2f}"
+        
+        except Exception as e:
+            self.cancelar()
+            return f"Error al procesar la reserva: {str(e)}"
 
     # ── Representación ───────────────────────────────────────
     def __str__(self) -> str:
@@ -69,3 +80,6 @@ class Reserva:
                 f"servicio='{self.__servicio.get_nombre()}', "
                 f"estado={self.__estado}, fecha={self.__fecha}, "
                 f"costo=${self.get_costo():.2f})")
+        
+
+
