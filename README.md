@@ -10,10 +10,10 @@ con manejo de excepciones personalizadas, logging y simulación de operaciones.
 | # | Nombre | Rol |
 |---|--------|-----|
 | 1 | Luis Gustavo Osio Salazar | Arquitecto / Excepciones |
-| 2 | Jose Miguel Garcia Fernandez | Módulo Cliente / Logs |
-| 3 | Carlos Eduardo Martínez Ruiz | Módulo Servicio / Simulación |
-| 4 | Diana Patricia Torres Gómez | Servicios Derivados / Documentación |
-| 5 | Javier Andrés Herrera Castillo | Módulo Reserva |
+| 2 | Jose Alejandro | Módulo Cliente / Logs |
+| 3 |  / Simulación |
+| 4 |  | Servicios Derivados / Documentación |
+| 5 |  | Módulo Reserva |
 
 ---
 
