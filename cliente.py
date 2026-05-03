@@ -45,3 +45,6 @@ class Cliente:
     # ── Representación ───────────────────────────────────────
     def __str__(self) -> str:
         return f"Cliente(id={self.__id_cliente}, nombre='{self.__nombre}', correo='{self.__correo}')"
+    
+
+
