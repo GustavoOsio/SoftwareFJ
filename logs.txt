@@ -1,3 +1,20 @@
 # logs.txt — Archivo de registro del sistema software_fi
 # Este archivo es generado y actualizado automáticamente por logger.py
 # Formato: [YYYY-MM-DD HH:MM:SS] [NIVEL] Mensaje
+[2026-05-03 19:58:09] [INFO] Cliente creado: Cliente(id=1, nombre='Ana García', correo='ana@email.com')
+[2026-05-03 19:58:09] [INFO] Cliente creado: Cliente(id=2, nombre='Luis Pérez', correo='luis@email.com')
+[2026-05-03 19:58:09] [INFO] Cliente creado: Cliente(id=3, nombre='María López', correo='maria@email.com')
+[2026-05-03 19:58:09] [ERROR] ClienteInvalidoError capturado: El nombre y el correo del cliente no pueden estar vacíos.
+[2026-05-03 19:58:09] [INFO] Servicio creado: ServicioBasico(id=1, nombre='Corte de cabello', estado=disponible, costo=$50.00)
+[2026-05-03 19:58:09] [INFO] Servicio creado: ServicioBasico(id=2, nombre='Manicure', estado=disponible, costo=$50.00)
+[2026-05-03 19:58:09] [INFO] Servicio creado: ServicioPremium(id=3, nombre='Spa completo', estado=disponible, costo=$150.00)
+[2026-05-03 19:58:09] [INFO] Servicio creado: ServicioPremium(id=4, nombre='Masaje relajante', estado=no disponible, costo=$125.00) (no disponible)
+[2026-05-03 19:58:09] [INFO] Reserva creada: Reserva(id=1, cliente='Ana García', servicio='Corte de cabello', estado=activa, fecha=2026-05-03 19:58:09, costo=$50.00)
+[2026-05-03 19:58:09] [INFO] Reserva creada: Reserva(id=2, cliente='Luis Pérez', servicio='Spa completo', estado=activa, fecha=2026-05-03 19:58:09, costo=$150.00)
+[2026-05-03 19:58:09] [ERROR] ServicioNoDisponibleError capturado: El servicio 'Masaje relajante' no está disponible actualmente.
+[2026-05-03 19:58:09] [INFO] Consulta: 2 reserva(s) activa(s) encontradas.
+[2026-05-03 19:58:09] [INFO] Reserva #1 cancelada exitosamente.
+[2026-05-03 19:58:09] [ERROR] ReservaYaCanceladaError capturado: La reserva #1 ya fue cancelada anteriormente.
+[2026-05-03 19:58:09] [ERROR] ClienteNoEncontradoError capturado: No se encontró el cliente con ID 999.
+[2026-05-03 19:58:09] [INFO] Costo total de 1 reserva(s) activa(s): $150.00
+[2026-05-03 19:58:09] [INFO] Reporte general generado correctamente en: reporte_sistema.txt
