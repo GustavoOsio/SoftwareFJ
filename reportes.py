@@ -1,5 +1,3 @@
-git
- 
 # reportes.py — Módulo de reportes del sistema
 
 # Proyecto: software_fi
@@ -9,6 +7,7 @@ git
 # ============================================================
  
 from datetime import datetime
+from servicio import formatear_cop
  
  
 def _ejecutar_metodo_seguro(objeto, nombre_metodo, valor_defecto=None):
@@ -119,7 +118,7 @@ def imprimir_reporte_general(clientes, servicios, reservas):
 
     print(f"Reservas canceladas: {reporte['reservas_canceladas']}")
 
-    print(f"Costo total de reservas activas: ${reporte['costo_total_reservas_activas']:.2f}")
+    print(f"Costo total de reservas activas: {formatear_cop(reporte['costo_total_reservas_activas'])}")
 
     print("=================================================\n")
  
@@ -150,7 +149,7 @@ def guardar_reporte_general(clientes, servicios, reservas, ruta_archivo="reporte
 
         f"Reservas canceladas: {reporte['reservas_canceladas']}",
 
-        f"Costo total de reservas activas: ${reporte['costo_total_reservas_activas']:.2f}",
+        f"Costo total de reservas activas: {formatear_cop(reporte['costo_total_reservas_activas'])}",
 
         "=================================================",
 

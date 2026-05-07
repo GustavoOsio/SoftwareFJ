@@ -1,6 +1,6 @@
 # ============================================================
 # excepciones.py — Excepciones personalizadas del sistema
-# Proyecto: software_fi
+# Proyecto: Software FJ - Sistema de Gestión de Reservas
 # ============================================================
 
 
