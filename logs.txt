@@ -131,3 +131,67 @@
 [2026-05-06 21:18:43] [INFO] ==================================================
 [2026-05-06 21:18:43] [INFO] Sistema iniciado correctamente. Todas las operaciones completadas.
 [2026-05-06 21:18:43] [INFO] ==================================================
+[2026-05-06 22:31:25] [INFO] ==================================================
+[2026-05-06 22:31:25] [INFO] INICIO DEL SISTEMA — Software FJ
+[2026-05-06 22:31:25] [INFO] ==================================================
+[2026-05-06 22:31:25] [INFO] Operación 1 — Cliente registrado: Cliente(id=1, nombre='Ana García', correo='ana@email.com', telefono='3001234567')
+[2026-05-06 22:31:25] [INFO] Operación 1 — Cliente registrado: Cliente(id=2, nombre='Luis Pérez', correo='luis@email.com', telefono='3109876543')
+[2026-05-06 22:31:25] [INFO] Operación 1 — Cliente registrado: Cliente(id=3, nombre='María López', correo='maria@email.com', telefono='')
+[2026-05-06 22:31:25] [INFO] Operación 2 — Intentando crear cliente inválido...
+[2026-05-06 22:31:25] [ERROR] Operación 2 — ClienteInvalidoError: El nombre del cliente no puede estar vacío.
+[2026-05-06 22:31:25] [ERROR] Operación 2b — ClienteInvalidoError (correo inválido): El correo ingresado no tiene un formato válido.
+[2026-05-06 22:31:25] [INFO] Operación 3 — Servicio registrado: ReservaSala(id=1, nombre='Sala Innovación', estado=Disponible, costo=$40.000 COP)
+[2026-05-06 22:31:25] [INFO] Operación 3 — Servicio registrado: ReservaSala(id=2, nombre='Sala Reuniones A', estado=Disponible, costo=$40.000 COP)
+[2026-05-06 22:31:25] [INFO] Operación 4 — Servicio registrado: AlquilerEquipo(id=3, nombre='Laptop Dell XPS', estado=Disponible, costo=$80.000 COP)
+[2026-05-06 22:31:25] [INFO] Operación 4 — Servicio registrado: AsesoriaEspecializada(id=4, nombre='Asesoría en IA', estado=Disponible, costo=$150.000 COP)
+[2026-05-06 22:31:25] [ADVERTENCIA] Operación 4 — Servicio creado como NO disponible: ReservaSala(id=5, nombre='Sala VIP', estado=No disponible, costo=$40.000 COP)
+[2026-05-06 22:31:25] [INFO] Operación 5 — Reserva creada: Reserva(id=1, cliente='Ana García', servicio='Sala Innovación', estado=Activa, fecha=2026-05-06 22:31:25, costo=$120.000 COP)
+[2026-05-06 22:31:25] [INFO] Operación 5 — Reserva con descuento creada: Reserva(id=2, cliente='Luis Pérez', servicio='Asesoría en IA', estado=Activa, fecha=2026-05-06 22:31:25, costo=$283.500 COP)
+[2026-05-06 22:31:25] [INFO] Operación 6 — Intentando reservar servicio no disponible...
+[2026-05-06 22:31:25] [ERROR] Operación 6 — ServicioNoDisponibleError: El servicio 'Sala VIP' no está disponible actualmente.
+[2026-05-06 22:31:25] [INFO] Operación 7 — Intentando reserva con 0 horas...
+[2026-05-06 22:31:25] [ERROR] Operación 7 — ReservaInvalidaError: La duración mínima debe ser de 1 hora.
+[2026-05-06 22:31:25] [INFO] Operación 8 — Reserva #1 cancelada.
+[2026-05-06 22:31:25] [INFO] Operación 9 — Intentando cancelar reserva ya cancelada...
+[2026-05-06 22:31:25] [ERROR] Operación 9 — ReservaYaCanceladaError: La reserva #1 ya fue cancelada anteriormente.
+[2026-05-06 22:31:25] [INFO] Operación 9 — Bloque finally ejecutado (sistema sigue activo).
+[2026-05-06 22:31:25] [INFO] Operación 10 — Buscando cliente inexistente (ID=9999)...
+[2026-05-06 22:31:25] [ERROR] Operación 10 — ClienteNoEncontradoError: No se encontró el cliente con ID 9999.
+[2026-05-06 22:31:25] [INFO] Operación 11 — Costo total de 1 reserva(s) activa(s): $283.500 COP
+[2026-05-06 22:31:25] [INFO] Operación 12 — Demostración de encadenamiento de excepciones...
+[2026-05-06 22:31:25] [ERROR] Operación 12 — Excepción encadenada capturada: Error derivado de operación inválida. (causa: Error de valor en la operación base.)
+[2026-05-06 22:31:25] [INFO] ==================================================
+[2026-05-06 22:31:25] [INFO] Sistema iniciado correctamente. Todas las operaciones completadas.
+[2026-05-06 22:31:25] [INFO] ==================================================
+[2026-05-07 18:18:47] [INFO] ==================================================
+[2026-05-07 18:18:47] [INFO] INICIO DEL SISTEMA — Software FJ
+[2026-05-07 18:18:47] [INFO] ==================================================
+[2026-05-07 18:18:47] [INFO] Operación 1 — Cliente registrado: Cliente(id=1, nombre='Ana García', correo='ana@email.com', telefono='3001234567')
+[2026-05-07 18:18:47] [INFO] Operación 1 — Cliente registrado: Cliente(id=2, nombre='Luis Pérez', correo='luis@email.com', telefono='3109876543')
+[2026-05-07 18:18:47] [INFO] Operación 1 — Cliente registrado: Cliente(id=3, nombre='María López', correo='maria@email.com', telefono='')
+[2026-05-07 18:18:47] [INFO] Operación 2 — Intentando crear cliente inválido...
+[2026-05-07 18:18:47] [ERROR] Operación 2 — ClienteInvalidoError: El nombre del cliente no puede estar vacío.
+[2026-05-07 18:18:47] [ERROR] Operación 2b — ClienteInvalidoError (correo inválido): El correo ingresado no tiene un formato válido.
+[2026-05-07 18:18:47] [INFO] Operación 3 — Servicio registrado: ReservaSala(id=1, nombre='Sala Innovación', estado=Disponible, costo=$40.000 COP)
+[2026-05-07 18:18:47] [INFO] Operación 3 — Servicio registrado: ReservaSala(id=2, nombre='Sala Reuniones A', estado=Disponible, costo=$40.000 COP)
+[2026-05-07 18:18:47] [INFO] Operación 4 — Servicio registrado: AlquilerEquipo(id=3, nombre='Laptop Dell XPS', estado=Disponible, costo=$80.000 COP)
+[2026-05-07 18:18:47] [INFO] Operación 4 — Servicio registrado: AsesoriaEspecializada(id=4, nombre='Asesoría en IA', estado=Disponible, costo=$150.000 COP)
+[2026-05-07 18:18:47] [ADVERTENCIA] Operación 4 — Servicio creado como NO disponible: ReservaSala(id=5, nombre='Sala VIP', estado=No disponible, costo=$40.000 COP)
+[2026-05-07 18:18:47] [INFO] Operación 5 — Reserva creada: Reserva(id=1, cliente='Ana García', servicio='Sala Innovación', estado=Activa, fecha=2026-05-07 18:18:47, costo=$120.000 COP)
+[2026-05-07 18:18:47] [INFO] Operación 5 — Reserva con descuento creada: Reserva(id=2, cliente='Luis Pérez', servicio='Asesoría en IA', estado=Activa, fecha=2026-05-07 18:18:47, costo=$283.500 COP)
+[2026-05-07 18:18:47] [INFO] Operación 6 — Intentando reservar servicio no disponible...
+[2026-05-07 18:18:47] [ERROR] Operación 6 — ServicioNoDisponibleError: El servicio 'Sala VIP' no está disponible actualmente.
+[2026-05-07 18:18:47] [INFO] Operación 7 — Intentando reserva con 0 horas...
+[2026-05-07 18:18:47] [ERROR] Operación 7 — ReservaInvalidaError: La duración mínima debe ser de 1 hora.
+[2026-05-07 18:18:47] [INFO] Operación 8 — Reserva #1 cancelada.
+[2026-05-07 18:18:47] [INFO] Operación 9 — Intentando cancelar reserva ya cancelada...
+[2026-05-07 18:18:47] [ERROR] Operación 9 — ReservaYaCanceladaError: La reserva #1 ya fue cancelada anteriormente.
+[2026-05-07 18:18:47] [INFO] Operación 9 — Bloque finally ejecutado (sistema sigue activo).
+[2026-05-07 18:18:47] [INFO] Operación 10 — Buscando cliente inexistente (ID=9999)...
+[2026-05-07 18:18:47] [ERROR] Operación 10 — ClienteNoEncontradoError: No se encontró el cliente con ID 9999.
+[2026-05-07 18:18:47] [INFO] Operación 11 — Costo total de 1 reserva(s) activa(s): $283.500 COP
+[2026-05-07 18:18:47] [INFO] Operación 12 — Demostración de encadenamiento de excepciones...
+[2026-05-07 18:18:47] [ERROR] Operación 12 — Excepción encadenada capturada: Error derivado de operación inválida. (causa: Error de valor en la operación base.)
+[2026-05-07 18:18:47] [INFO] ==================================================
+[2026-05-07 18:18:47] [INFO] Sistema iniciado correctamente. Todas las operaciones completadas.
+[2026-05-07 18:18:47] [INFO] ==================================================
