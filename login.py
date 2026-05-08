@@ -8,6 +8,17 @@ ventana.geometry("500x400")
 ventana.configure(bg="#1C2B3A")
 ventana.resizable(False, False)
 
+ancho_ventana = 500
+alto_ventana = 400
+
+pantalla_ancho = ventana. winfo_screenwidth()
+pantalla_alto = ventana.winfo_screenheight()
+
+x = int((pantalla_ancho / 2) - (ancho_ventana / 2))
+y = int((pantalla_alto / 2) - (alto_ventana / 2))
+
+ventana.geometry(f"{ancho_ventana}x{alto_ventana}+{x}+{y}")
+
 titulo = tk.Label(
     ventana,
     text="Software FJ",
@@ -31,8 +42,12 @@ lbl_usuario.pack(pady=5)
 entrada_usuario = tk.Entry(
     ventana,
     font=("Courier", 12),
-    width=25
-)
+    width=25,
+    bg="#243447",
+    fg="white",
+    insertbackground="white",
+    relief="flat"
+    )
 
 entrada_usuario.pack(pady=5)
 
@@ -50,7 +65,11 @@ entrada_clave = tk.Entry(
     ventana,
     font=("Courier", 12),
     width=25,
-    show="*"
+    show="*",
+    bg="#243447",
+    fg="white",
+    insertbackground="white",
+    relief="flat"
 )
 
 entrada_clave.pack(pady=5)
