@@ -8,6 +8,8 @@ ventana.geometry("500x400")
 ventana.configure(bg="#1C2B3A")
 ventana.resizable(False, False)
 
+# ------ CENTRAR VENTANA --------
+
 ancho_ventana = 500
 alto_ventana = 400
 
@@ -28,6 +30,8 @@ titulo = tk.Label(
 )
 
 titulo.pack(pady=40)
+
+# -------- USUARIO -----------
 
 lbl_usuario = tk.Label(
     ventana,
@@ -51,6 +55,8 @@ entrada_usuario = tk.Entry(
 
 entrada_usuario.pack(pady=5)
 
+# --------- CONTRASEÑA ----------------
+
 lbl_clave = tk.Label(
     ventana,
     text="Contraseña",
@@ -73,6 +79,42 @@ entrada_clave = tk.Entry(
 )
 
 entrada_clave.pack(pady=5)
+
+mostrar_clave = False
+
+# --------- MOSTRAR OCULTAR CONTRASEÑA ----------------
+
+def mostrar_ocultar_clave():
+    
+    global mostrar_clave
+    
+    if mostrar_clave:
+    
+        entrada_clave.config(show="*")
+        btn_mostrar.config(text="Mostrar")
+        
+        mostrar_clave = False
+        
+    else:
+        entrada_clave.config(show="")
+        btn_mostrar.config(text="Ocultar")
+        
+        mostrar_clave = True
+        
+btn_mostrar = tk.Button(
+    ventana,
+    text="Mostrar",
+    font=("Arial", 10),
+    bg="#243447",
+    fg="white",
+    relief="flat",
+    cursor="hand2",
+    command=mostrar_ocultar_clave
+)
+
+btn_mostrar.pack(pady=5)
+
+# ------------- LOGIN ------------------
 
 def iniciar_sesion():
 
