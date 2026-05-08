@@ -20,6 +20,16 @@ x = int((pantalla_ancho / 2) - (ancho_ventana / 2))
 y = int((pantalla_alto / 2) - (alto_ventana / 2))
 
 ventana.geometry(f"{ancho_ventana}x{alto_ventana}+{x}+{y}")
+logo = tk.PhotoImage(file="logo.png")
+logo = logo.subsample(2, 2)
+
+lbl_logo = tk.Label(
+    ventana,
+    image=logo,
+    bg="#1C2B3A"
+)
+
+lbl_logo.pack(pady=10)
 
 titulo = tk.Label(
     ventana,
@@ -29,7 +39,7 @@ titulo = tk.Label(
     bg="#1C2B3A"
 )
 
-titulo.pack(pady=40)
+titulo.pack(pady=20)
 
 # -------- USUARIO -----------
 
@@ -54,6 +64,7 @@ entrada_usuario = tk.Entry(
     )
 
 entrada_usuario.pack(pady=5)
+entrada_usuario.focus()
 
 # --------- CONTRASEÑA ----------------
 
@@ -136,14 +147,18 @@ def iniciar_sesion():
 btn_login = tk.Button(
     ventana,
     text="Iniciar Sesión",
-    font=("Courier", 12, "bold"),
+    font=("Courier", 11, "bold"),
     bg="#00C9A7",
     fg="black",
-    padx=10,
-    pady=5,
+    padx=8,
+    pady=6,
+    relief="flat",
+    cursor="hand2",
     command=iniciar_sesion
 )
 
-btn_login.pack(pady=30)
+btn_login.pack(pady=25)
+
+ventana.bind("<Return>", lambda event: iniciar_sesion())
 
 ventana.mainloop()
