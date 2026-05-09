@@ -11,9 +11,9 @@ con manejo de excepciones personalizadas, logging y simulación de operaciones.
 |---|--------|-----|
 | 1 | Luis Gustavo Osio Salazar | Arquitecto / Excepciones |
 | 2 | Jose Miguel Garcia Fernandez | Módulo Cliente / Logs |
-| 3 | --- | Módulo Servicio / Simulación |
-| 4 | ---- | Servicios Derivados / Documentación |
-| 5 | ----- | Módulo Reserva |
+| 3 | Jose Barreto | Módulo Servicio / Simulación |
+| 4 | Ingry Matos | Servicios Derivados / Documentación |
+| 5 | Jose Alejandro | Módulo Reserva |
 
 ---
 
