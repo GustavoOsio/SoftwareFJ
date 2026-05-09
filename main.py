@@ -1391,12 +1391,19 @@ class AplicacionSoftwareFJ:
 # PUNTO DE ENTRADA DEL PROGRAMA
 # ============================================================
 
+from login import LoginApp
+
+
 if __name__ == "__main__":
-    # Creamos la ventana principal de Tkinter
-    ventana = tk.Tk()
 
-    # Iniciamos la aplicación
-    app = AplicacionSoftwareFJ(ventana)
+    def abrir_sistema():
 
-    # Iniciamos el bucle principal de la interfaz
-    ventana.mainloop()
+        raiz = tk.Tk()
+
+        app = AplicacionSoftwareFJ(raiz)
+
+        raiz.mainloop()
+
+    login = LoginApp(on_login_success=abrir_sistema)
+
+    login.ejecutar()

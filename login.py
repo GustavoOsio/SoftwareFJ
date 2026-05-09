@@ -1,164 +1,183 @@
 import tkinter as tk
 from tkinter import messagebox
 
-ventana = tk.Tk()
 
-ventana.title("Login - Software FJ")
-ventana.geometry("500x400")
-ventana.configure(bg="#1C2B3A")
-ventana.resizable(False, False)
+class LoginApp:
 
-# ------ CENTRAR VENTANA --------
+    def __init__(self, on_login_success=None):
+        self.on_login_success = on_login_success
 
-ancho_ventana = 500
-alto_ventana = 400
+        self.ventana = tk.Tk()
 
-pantalla_ancho = ventana. winfo_screenwidth()
-pantalla_alto = ventana.winfo_screenheight()
+        self.ventana.title("Login - Software FJ")
+        self.ventana.geometry("500x400")
+        self.ventana.configure(bg="#1C2B3A")
+        self.ventana.resizable(False, False)
 
-x = int((pantalla_ancho / 2) - (ancho_ventana / 2))
-y = int((pantalla_alto / 2) - (alto_ventana / 2))
+        # -------- CENTRAR VENTANA --------
 
-ventana.geometry(f"{ancho_ventana}x{alto_ventana}+{x}+{y}")
-logo = tk.PhotoImage(file="logo.png")
-logo = logo.subsample(2, 2)
+        ancho_ventana = 500
+        alto_ventana = 400
 
-lbl_logo = tk.Label(
-    ventana,
-    image=logo,
-    bg="#1C2B3A"
-)
+        pantalla_ancho = self.ventana.winfo_screenwidth()
+        pantalla_alto = self.ventana.winfo_screenheight()
 
-lbl_logo.pack(pady=10)
+        x = int((pantalla_ancho / 2) - (ancho_ventana / 2))
+        y = int((pantalla_alto / 2) - (alto_ventana / 2))
 
-titulo = tk.Label(
-    ventana,
-    text="Software FJ",
-    font=("Courier", 24, "bold"),
-    fg="#00C9A7",
-    bg="#1C2B3A"
-)
+        self.ventana.geometry(f"{ancho_ventana}x{alto_ventana}+{x}+{y}")
 
-titulo.pack(pady=20)
+        # -------- LOGO --------
 
-# -------- USUARIO -----------
+        self.logo = tk.PhotoImage(file="logo.png")
+        self.logo = self.logo.subsample(2, 2)
 
-lbl_usuario = tk.Label(
-    ventana,
-    text="Usuario",
-    font=("Courier", 12),
-    fg="white",
-    bg="#1C2B3A"
-)
-
-lbl_usuario.pack(pady=5)
-
-entrada_usuario = tk.Entry(
-    ventana,
-    font=("Courier", 12),
-    width=25,
-    bg="#243447",
-    fg="white",
-    insertbackground="white",
-    relief="flat"
-    )
-
-entrada_usuario.pack(pady=5)
-entrada_usuario.focus()
-
-# --------- CONTRASEÑA ----------------
-
-lbl_clave = tk.Label(
-    ventana,
-    text="Contraseña",
-    font=("Courier", 12),
-    fg="white",
-    bg="#1C2B3A"
-)
-
-lbl_clave.pack(pady=5)
-
-entrada_clave = tk.Entry(
-    ventana,
-    font=("Courier", 12),
-    width=25,
-    show="*",
-    bg="#243447",
-    fg="white",
-    insertbackground="white",
-    relief="flat"
-)
-
-entrada_clave.pack(pady=5)
-
-mostrar_clave = False
-
-# --------- MOSTRAR OCULTAR CONTRASEÑA ----------------
-
-def mostrar_ocultar_clave():
-    
-    global mostrar_clave
-    
-    if mostrar_clave:
-    
-        entrada_clave.config(show="*")
-        btn_mostrar.config(text="Mostrar")
-        
-        mostrar_clave = False
-        
-    else:
-        entrada_clave.config(show="")
-        btn_mostrar.config(text="Ocultar")
-        
-        mostrar_clave = True
-        
-btn_mostrar = tk.Button(
-    ventana,
-    text="Mostrar",
-    font=("Arial", 10),
-    bg="#243447",
-    fg="white",
-    relief="flat",
-    cursor="hand2",
-    command=mostrar_ocultar_clave
-)
-
-btn_mostrar.pack(pady=5)
-
-# ------------- LOGIN ------------------
-
-def iniciar_sesion():
-
-    usuario = entrada_usuario.get()
-    clave = entrada_clave.get()
-
-    if usuario == "admin" and clave == "1234":
-
-        ventana.destroy()
-
-        import main
-
-    else:
-        messagebox.showerror(
-            "Error",
-            "Usuario o contraseña incorrectos"
+        lbl_logo = tk.Label(
+            self.ventana,
+            image=self.logo,
+            bg="#1C2B3A"
         )
 
-btn_login = tk.Button(
-    ventana,
-    text="Iniciar Sesión",
-    font=("Courier", 11, "bold"),
-    bg="#00C9A7",
-    fg="black",
-    padx=8,
-    pady=6,
-    relief="flat",
-    cursor="hand2",
-    command=iniciar_sesion
-)
+        lbl_logo.pack(pady=10)
 
-btn_login.pack(pady=25)
+        # -------- TITULO --------
 
-ventana.bind("<Return>", lambda event: iniciar_sesion())
+        titulo = tk.Label(
+            self.ventana,
+            text="Software FJ",
+            font=("Courier", 24, "bold"),
+            fg="#00C9A7",
+            bg="#1C2B3A"
+        )
 
-ventana.mainloop()
+        titulo.pack(pady=20)
+
+        # -------- USUARIO --------
+
+        lbl_usuario = tk.Label(
+            self.ventana,
+            text="Usuario",
+            font=("Courier", 12),
+            fg="white",
+            bg="#1C2B3A"
+        )
+
+        lbl_usuario.pack(pady=5)
+
+        self.entrada_usuario = tk.Entry(
+            self.ventana,
+            font=("Courier", 12),
+            width=25,
+            bg="#243447",
+            fg="white",
+            insertbackground="white",
+            relief="flat"
+        )
+
+        self.entrada_usuario.pack(pady=5)
+        self.entrada_usuario.focus()
+
+        # -------- CONTRASEÑA --------
+
+        lbl_clave = tk.Label(
+            self.ventana,
+            text="Contraseña",
+            font=("Courier", 12),
+            fg="white",
+            bg="#1C2B3A"
+        )
+
+        lbl_clave.pack(pady=5)
+
+        self.entrada_clave = tk.Entry(
+            self.ventana,
+            font=("Courier", 12),
+            width=25,
+            show="*",
+            bg="#243447",
+            fg="white",
+            insertbackground="white",
+            relief="flat"
+        )
+
+        self.entrada_clave.pack(pady=5)
+
+        self.mostrar_clave = False
+
+        # -------- MOSTRAR / OCULTAR --------
+
+        self.btn_mostrar = tk.Button(
+            self.ventana,
+            text="Mostrar",
+            font=("Arial", 10),
+            bg="#243447",
+            fg="white",
+            relief="flat",
+            cursor="hand2",
+            command=self.mostrar_ocultar_clave
+        )
+
+        self.btn_mostrar.pack(pady=5)
+
+        # -------- LOGIN --------
+
+        btn_login = tk.Button(
+            self.ventana,
+            text="Iniciar Sesión",
+            font=("Courier", 12, "bold"),
+            bg="#00C9A7",
+            fg="#1C2B3A",
+            relief="flat",
+            padx=20,
+            pady=8,
+            cursor="hand2",
+            command=self.iniciar_sesion
+        )
+
+        btn_login.pack(pady=20)
+
+        self.ventana.bind("<Return>", lambda event: self.iniciar_sesion())
+
+    # ---------------------------------------
+
+    def mostrar_ocultar_clave(self):
+
+        if self.mostrar_clave:
+
+            self.entrada_clave.config(show="*")
+            self.btn_mostrar.config(text="Mostrar")
+
+            self.mostrar_clave = False
+
+        else:
+
+            self.entrada_clave.config(show="")
+            self.btn_mostrar.config(text="Ocultar")
+
+            self.mostrar_clave = True
+
+    # ---------------------------------------
+
+    def iniciar_sesion(self):
+
+        usuario = self.entrada_usuario.get().strip()
+        clave = self.entrada_clave.get().strip()
+
+        if usuario == "admin" and clave == "1234":
+
+            self.ventana.destroy()
+
+            if self.on_login_success:
+                self.on_login_success()
+
+        else:
+
+            messagebox.showerror(
+                "Error",
+                "Usuario o contraseña incorrectos"
+            )
+
+    # ---------------------------------------
+
+    def ejecutar(self):
+        self.ventana.mainloop()

@@ -1,10 +1,20 @@
-echo "__pycache__/
+# Python cache
+__pycache__/
 *.pyc
 *.pyo
+
+# Virtual environments
 .venv/
 venv/
 .env
+
+# Logs
+logs.txt
 logs/*.log
+
+# IDE
 .idea/
 *.iml
-.DS_Store" > .gitignore
+
+# OS files
+.DS_Store
